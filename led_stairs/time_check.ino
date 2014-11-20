@@ -7,12 +7,15 @@ boolean morning_pilltime(){
 //   } 
 //  }
   if(hour() == 6){
-    if(minute() >= 40 && minute() < 60){
+    if(minute() >= 20 && minute() < 61){
       return true;
     } 
   }
   if(hour() == 7){
-    if(minute() >= 0 && minute() < 35){
+    return true;
+  }
+  if(hour() == 8){
+    if(minute() >= 0 && minute() < 15){
       return true;
     } 
   }
@@ -21,10 +24,10 @@ boolean morning_pilltime(){
 
 
 boolean evening_time(){
-  if(hour() >= 19 && hour() < 23){
+  if(hour() >= 18 && hour() < 24){
     return true;
   }
-  if(hour() == 18 && minute() > 15){
+  if(hour() == 17 && minute() > 15){
     return true;
   }
   return false;
