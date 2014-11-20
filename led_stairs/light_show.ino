@@ -35,7 +35,7 @@ void pill_trails(int d) {
     case 6: // Friday
       main = strip.Color(70, 0, 150); // Purple
       alt = strip.Color(150, 50, 255);   
-      addMinutesToClock(d);
+      addMinutesToClock(d);          // add 6 minutes to the clock
       break;
   }
   colorWipe(main, alt, 70);
@@ -58,8 +58,9 @@ void evening_art(int hourForWait) {
   int specialDay = special_days(1);
   if(specialDay == 31){
     halloweenFlash(hourForWait);
-  }
-  else{
+  } else if(specialDay == 25){
+    christmasLights(hourForWait);
+  } else{
     int exponetiatHour = (int)pow(hourForWait, 3);
     exponetiatHour = ((exponetiatHour > 5000) ? exponetiatHour - 4000 : exponetiatHour);
     slowRainbowCycle(exponetiatHour);
@@ -109,10 +110,13 @@ void halloweenFlash(uint8_t wait) {
 
 
 
+void christmasLights(uint8_t wait) {
+  rainbowCycle(wait);
+}
+
 // Slightly different, this makes the rainbow equally distributed throughout
 void rainbowCycle(uint8_t wait) {
   uint16_t i, j;
-
   for(j=0; j<256*5; j++) { // 5 cycles of all colors on wheel
     for(i=0; i< strip.numPixels(); i++) {
       strip.setPixelColor(i, Wheel(((i * 256 / strip.numPixels()) + j) & 255));
