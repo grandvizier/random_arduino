@@ -35,7 +35,7 @@ void pill_trails(int d) {
     case 6: // Friday
       main = strip.Color(70, 0, 150); // Purple
       alt = strip.Color(150, 50, 255);   
-      addMinutesToClock(d);          // add 6 minutes to the clock
+      //addMinutesToClock(d);          // add 6 minutes to the clock
       break;
   }
   colorWipe(main, alt, 70);

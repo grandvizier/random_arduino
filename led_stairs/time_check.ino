@@ -1,24 +1,17 @@
 
 
 boolean morning_pilltime(){
+  if(hour() == 6 || hour() == 7){
+     return true;
+  }
 //  if(hour() == 6){
-//   if(minute() >= 10 && minute() <= 45){
-//     return true;
-//   } 
+//    if(minute() >= 20 && minute() < 61){
+//      return true;
+//    }
 //  }
-  if(hour() == 6){
-    if(minute() >= 20 && minute() < 61){
-      return true;
-    } 
-  }
-  if(hour() == 7){
-    return true;
-  }
-  if(hour() == 8){
-    if(minute() >= 0 && minute() < 15){
-      return true;
-    } 
-  }
+//  if(hour() == 7){
+//    return true;
+//  }
   return false;
 }
 
